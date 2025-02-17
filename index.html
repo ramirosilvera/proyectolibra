@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIP Protocol - El Origen de $LIBRA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- Pantalla 1: Inicio -->
+    <div id="start-screen" class="screen">
+      <h1>KIP Protocol</h1>
+      <p>
+        Eres el dueño de KIP Protocol y has creado la moneda $LIBRA para impulsar el "Viva la Libertad Project" en Argentina.
+        Con la recomendación de Javier Milei, tu plan es revolucionario... ¡y fraudulentamente exitoso!
+      </p>
+      <div class="image-container">
+        <img src="IMG_2285.jpeg" alt="Inicio del Proyecto">
+      </div>
+      <button id="start-btn">Comenzar</button>
+    </div>
+
+    <!-- Pantalla 2: Reunión en el Foro Tecnológico -->
+    <div id="meeting1-screen" class="screen hidden">
+      <h2>Reunión en el Foro Tecnológico</h2>
+      <p>
+        Durante el Tech Forum, te reúnes con Javier Milei para discutir la estrategia.
+        Observa su aparición en el foro y empieza a planear la estafa.
+      </p>
+      <div class="image-container">
+        <img src="IMG_2291.jpeg" alt="Reunión en el Foro Tecnológico">
+      </div>
+      <button id="meeting1-btn">Siguiente</button>
+    </div>
+
+    <!-- Pantalla 3: Reunión Estratégica Privada -->
+    <div id="meeting2-screen" class="screen hidden">
+      <h2>Reunión Estratégica Privada</h2>
+      <p>
+        Ahora, en una videoconferencia exclusiva, coordinas la distribución de tokens a valor cero.
+        Reparte el 70% de los tokens entre 9 insiders para tener el control absoluto.
+      </p>
+      <button id="meeting2-btn">Siguiente</button>
+    </div>
+
+    <!-- Pantalla 4: Activación del Hype -->
+    <div id="pump-screen" class="screen hidden">
+      <h2>Activación del Hype</h2>
+      <p>
+        Javier Milei publica un tweet promocional que dispara el precio de $LIBRA, impulsado por una red de bots.
+      </p>
+      <div class="image-container">
+        <img src="IMG_2286.jpeg" alt="Tweet de Milei que Dispara el Precio" class="clickable-image" onclick="openModal('chart-modal')">
+      </div>
+      <div id="price-display" class="chart">Precio actual: $0</div>
+      <button id="sell-btn">Ejecutar Venta Coordinada</button>
+    </div>
+
+    <!-- Pantalla 5: Venta Coordinada y Rug Pull -->
+    <div id="sale-screen" class="screen hidden">
+      <h2>Venta Coordinada y Rug Pull</h2>
+      <p id="sale-message">¡Felicidades! Has ejecutado la venta coordinada y te llevas $87,000,000 dólares.</p>
+      <div class="image-container">
+        <img src="IMG_2288.jpeg" alt="Rug Pull y Venta Coordinada">
+      </div>
+      <div id="final-price" class="chart">Valor final: $87,000,000</div>
+      <button id="final-btn">Ver Evidencia y Explicación</button>
+    </div>
+
+    <!-- Pantalla 6: Evidencia y Explicación -->
+    <div id="final-screen" class="screen hidden">
+      <h2>Evidencia y Explicación</h2>
+      <p>
+        $LIBRA fue un pump and dump: tokens adquiridos a valor cero, repartidos entre insiders (70% controlado),
+        impulsados artificialmente por bots y el tweet promocional de Milei, para luego vender en masa y obtener ganancias multimillonarias.
+      </p>
+      <div class="explanation-images">
+        <div class="explanation-image">
+          <img src="IMG_2285.jpeg" alt="Inicio del Proyecto">
+          <p>Inicio del Proyecto</p>
+        </div>
+        <div class="explanation-image">
+          <img src="IMG_2286.jpeg" alt="Tweet que Dispara el Precio">
+          <p>Tweet que Dispara el Precio</p>
+        </div>
+        <div class="explanation-image">
+          <img src="IMG_2289.png" alt="Wallets y Cash-out">
+          <p>Wallets y Cash-out</p>
+        </div>
+        <div class="explanation-image">
+          <img src="IMG_2290.jpeg" alt="Tweet de Negación">
+          <p>Negación de Responsabilidad</p>
+        </div>
+      </div>
+      <button id="restart-btn">Reiniciar Juego</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="chart-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('chart-modal')">&times;</span>
+        <img src="IMG_2286.jpeg" alt="Tweet de Milei que Dispara el Precio">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
