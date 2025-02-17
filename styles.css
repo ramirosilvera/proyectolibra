@@ -53,11 +53,7 @@ button:hover {
   width: 100%;
   border: 2px solid #ff1744;
   border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.image-container img:hover {
-  transform: scale(1.05);
+  /* Se elimina cursor pointer y transición para evitar que se perciba interactivo */
 }
 
 /* Estilos para Gráficos y Pantallas de Precio */
@@ -112,7 +108,7 @@ button:hover {
   font-size: 14px;
 }
 
-/* Modal */
+/* Modal - Eliminado el uso de ampliación al tocar imágenes, aunque se mantiene el CSS si se desea utilizar en otro contexto */
 .modal {
   display: none;
   position: fixed;
