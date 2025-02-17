@@ -71,6 +71,18 @@ button:hover {
   font-size: 20px;
 }
 
+/* Contenedor de Conversación (Meeting) */
+#conversation-box {
+  background-color: #1f1f1f;
+  border: 2px solid #ff1744;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 5px;
+  min-height: 100px;
+  font-size: 18px;
+}
+
 /* Contenedor de Imágenes en la Explicación */
 .explanation-images {
   display: flex;
