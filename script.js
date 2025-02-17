@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "InSider 1: ¿Están seguros de que esto funcionará? Controlaremos el 70% con 9 insiders.",
     "Javier Milei: Confíen en mí, con mi tweet el precio se disparará. ¡Será épico!",
     "InSider 2: Los bots están listos para activar el pump. El mercado no sabrá qué lo golpeó.",
-    "Tú: Perfecto. Antes de que el precio alcance u$s4,978, los insiders se ponen de acuerdo para vender todos nuestros tokens de forma coordinada.",
+    "Tú: Perfecto. Antes de que el precio alcance u$s4,978, los debemos vender todos nuestros tokens de forma coordinada.",
     "Javier Milei: El tweet está preparado. Es hora de hacer historia y llenarnos de millones.",
     "InSider 3: ¡A ganar se ha dicho! Este plan nos hará ricos.",
     "Tú: Entonces, pongamos manos a la obra. ¡Master Plan activado!"
