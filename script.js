@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
   let pumpInterval;
   let currentPrice = 0;
+  // Conversación para la reunión estratégica
+  const conversationLines = [
+    "Tú: Tenemos que planificar el Master Plan para $LIBRA. Los tokens se repartirán a valor cero.",
+    "InSider 1: ¿Están seguros de que esto funcionará? Controlaremos el 70% con 9 insiders.",
+    "Javier Milei: Confíen en mí, con mi tweet el precio se disparará. ¡Será épico!",
+    "InSider 2: Los bots están listos para activar el pump. El mercado no sabrá qué lo golpeó.",
+    "Tú: Perfecto. En el pico, venderemos todos nuestros tokens de forma coordinada.",
+    "Javier Milei: El tweet está preparado. Es hora de hacer historia y llenarnos de millones.",
+    "InSider 3: ¡A ganar se ha dicho! Este plan nos hará ricos.",
+    "Tú: Entonces, pongamos manos a la obra. ¡Master Plan activado!"
+  ];
+  let convIndex = 0;
 
   // Función para mostrar una pantalla y ocultar las demás
   function showScreen(screenId) {
@@ -25,15 +37,27 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.getElementById("meeting1-btn").addEventListener("click", function() {
-    showScreen("meeting2-screen");
+    showScreen("conversation-screen");
+    convIndex = 0;
+    updateConversation();
   });
 
-  document.getElementById("meeting2-btn").addEventListener("click", function() {
-    showScreen("pump-screen");
-    startPumpSimulation();
+  document.getElementById("conv-next-btn").addEventListener("click", function() {
+    convIndex++;
+    if(convIndex < conversationLines.length) {
+      updateConversation();
+    } else {
+      // Finalizada la conversación, pasar a la siguiente pantalla
+      showScreen("pump-screen");
+      startPumpSimulation();
+    }
   });
 
-  // Simulación del pump: inicia el precio bajo y se incrementa artificialmente
+  function updateConversation() {
+    document.getElementById("conversation-text").textContent = conversationLines[convIndex];
+  }
+
+  // Simulación del pump: inicia con precio bajo y se incrementa artificialmente
   function startPumpSimulation() {
     currentPrice = 0.2; // Precio inicial muy bajo
     updatePriceDisplay();
@@ -47,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("price-display").textContent = "Precio actual: $" + currentPrice.toFixed(2);
   }
 
-  // Al ejecutar la venta coordinada, el usuario se vuelve millonario: $87,000,000
+  // Al ejecutar la venta coordinada, el usuario se vuelve millonario: $87.4 millones
   document.getElementById("sell-btn").addEventListener("click", function() {
     clearInterval(pumpInterval);
-    currentPrice = 87000000; // 87 millones de dólares
+    currentPrice = 87400000; // 87.4 millones de dólares
     document.getElementById("final-price").textContent = "Valor final: $" + currentPrice.toLocaleString();
-    document.getElementById("sale-message").textContent = "¡Felicidades! Has ejecutado la venta coordinada y te llevas $87,000,000 dólares.";
+    document.getElementById("sale-message").textContent = "¡Felicidades! Has ejecutado la venta coordinada y te llevas $87,400,000 dólares.";
     showScreen("sale-screen");
   });
 
