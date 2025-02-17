@@ -21,15 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById(screenId).classList.remove('hidden');
   }
 
-  // Funciones para abrir y cerrar modales
-  window.openModal = function(modalId) {
-    document.getElementById(modalId).style.display = "flex";
-  };
-
-  window.closeModal = function(modalId) {
-    document.getElementById(modalId).style.display = "none";
-  };
-
   // Navegación
   document.getElementById("start-btn").addEventListener("click", function() {
     showScreen("meeting1-screen");
@@ -54,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateConversation() {
     const convBox = document.getElementById("conversation-box");
     convBox.classList.remove("visible");
-    // Para dar efecto de fade, esperar 100ms y luego actualizar
     setTimeout(() => {
       document.getElementById("conversation-text").textContent = conversationLines[convIndex];
       convBox.classList.add("visible");
