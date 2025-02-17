@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   let pumpInterval;
   let currentPrice = 0;
-  // Conversación para la reunión estratégica
   const conversationLines = [
     "Tú: Tenemos que planificar el Master Plan para $LIBRA. Los tokens se repartirán a valor cero.",
     "InSider 1: ¿Están seguros de que esto funcionará? Controlaremos el 70% con 9 insiders.",
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById(modalId).style.display = "none";
   };
 
-  // Navegación entre pantallas
+  // Navegación
   document.getElementById("start-btn").addEventListener("click", function() {
     showScreen("meeting1-screen");
   });
@@ -44,17 +43,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("conv-next-btn").addEventListener("click", function() {
     convIndex++;
-    if(convIndex < conversationLines.length) {
+    if (convIndex < conversationLines.length) {
       updateConversation();
     } else {
-      // Finalizada la conversación, pasar a la siguiente pantalla
       showScreen("pump-screen");
       startPumpSimulation();
     }
   });
 
   function updateConversation() {
-    document.getElementById("conversation-text").textContent = conversationLines[convIndex];
+    const convBox = document.getElementById("conversation-box");
+    convBox.classList.remove("visible");
+    // Para dar efecto de fade, esperar 100ms y luego actualizar
+    setTimeout(() => {
+      document.getElementById("conversation-text").textContent = conversationLines[convIndex];
+      convBox.classList.add("visible");
+    }, 100);
   }
 
   // Simulación del pump: inicia con precio bajo y se incrementa artificialmente
@@ -71,21 +75,19 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("price-display").textContent = "Precio actual: $" + currentPrice.toFixed(2);
   }
 
-  // Al ejecutar la venta coordinada, el usuario se vuelve millonario: $87.4 millones
+  // Venta coordinada: se asigna ganancia de 87.4 millones
   document.getElementById("sell-btn").addEventListener("click", function() {
     clearInterval(pumpInterval);
-    currentPrice = 87400000; // 87.4 millones de dólares
+    currentPrice = 87400000; // 87.4 millones
     document.getElementById("final-price").textContent = "Valor final: $" + currentPrice.toLocaleString();
     document.getElementById("sale-message").textContent = "¡Felicidades! Has ejecutado la venta coordinada y te llevas $87,400,000 dólares.";
     showScreen("sale-screen");
   });
 
-  // Pasar a la pantalla final con evidencia y explicación
   document.getElementById("final-btn").addEventListener("click", function() {
     showScreen("final-screen");
   });
 
-  // Reiniciar el juego
   document.getElementById("restart-btn").addEventListener("click", function() {
     clearInterval(pumpInterval);
     currentPrice = 0;
